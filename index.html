@@ -4,38 +4,70 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Star Collective</title>
-  <link rel="stylesheet" href="landing.css">
+  <link rel="stylesheet" href="index.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <div class="header">
-      <div class="header-logo-container">
-        <img class="header-logo" src="resources/LOGO.png" alt="Logo">
+  <header class = "header-div">
+
+    <div class = "header-web">
+      <div class = "logo-greeting-div">
+        <div class = "img-logo-div">
+        <img src = "resources/LOGO.png" class = "img-logo">
+        </div>
       </div>
-      <div class="header-button-container">
-        <button class="header-button">Home</button>
-        <button class="header-button">About</button>
-        <button class="header-button">Shop</button>
+      <div class = "navigation-div">
+        <button class = "navigation-btn">Bulletin</button>
+        <button class = "navigation-btn">Request</button>
+        <button class = "navigation-btn">Manage</button>
       </div>
-      <div class="mobile-menu-container">
-        <button class="mobile-menu-button" onclick="toggleMenu()">☰ Menu</button>
+    </div>
+
+    <div class = "header-mobile">
+      <button class = "menu-btn">☰</button>
+      <div class = "logo-title-div">
+        <div class = "img-logo-div-mobile">
+        <img src = "resources/LOGO.png" class = "img-logo-mobile">
+        </div>
       </div>
+    </div>
+
+    <div class ="sidebar">
+      <div class = "sidebar-topbar">
+        <h1 class = "sidebar-title">Navigation</h1>
+        <button class = "close-btn">X</button>
+      </div>
+        <button class = "navigation-btns">Bulletin</button>
+        <button class = "navigation-btns">Request</button>
+        <button class = "navigation-btns">Manage</button>
     </div>
   </header>
 
-  <!-- Side Panel -->
-  <div id="side-panel" class="side-panel">
-    <button class="close-btn" onclick="toggleMenu()">×</button>
-    <a href="#">Home</a>
-    <a href="#">About</a>
-    <a href="#">Shop</a>
+  <div class = "section1">
+    <div class = "pfp-div">
+      <img src = "resources/pfp.png" class = "pfp-img">
+    </div>
+    <div class = "info-div">
+      <h1 class = "info-name">PATRICK JAKE M. ESTRELLA</h1>
+      <p class = "info-description"> I am a Bachelor of Science in Computer Engineering student at Pamantasan ng Lungsod ng Maynila, passionate about web development. I enjoy building modern, user-friendly websites and continuously learning new technologies to improve my skills in front-end and back-end development.</p>
+    </div>
+
   </div>
 
   <script>
-    function toggleMenu() {
-      document.getElementById("side-panel").classList.toggle("active");
-    }
+    const menuBtn = document.querySelector('.menu-btn');
+    const closeBtn = document.querySelector('.close-btn');
+    const sidebar = document.querySelector('.sidebar');
+
+    // Show sidebar when menu button is clicked
+    menuBtn.addEventListener('click', () => {
+      sidebar.classList.add('active');
+    });
+
+    closeBtn.addEventListener('click', () => {
+      sidebar.classList.remove('active');
+    });
   </script>
+  
 </body>
 </html>
